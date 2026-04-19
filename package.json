@@ -15,7 +15,6 @@
     "@base-ui/react": "^1.4.0",
     "@hookform/resolvers": "^5.2.2",
     "@prisma/client": "^5.22.0",
-    "@supabase/supabase-js": "^2.103.3",
     "@tiptap/extension-code-block": "^3.22.4",
     "@tiptap/react": "^3.22.4",
     "@tiptap/starter-kit": "^3.22.4",

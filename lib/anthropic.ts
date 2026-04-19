@@ -2,7 +2,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import { prisma } from "./prisma";
 import crypto from "crypto";
 
-const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY! });
+const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY || "dummy_key_for_build_environment_only" });
 
 const MODEL = "claude-sonnet-4-20250514";
 const MAX_TOKENS = 1000;

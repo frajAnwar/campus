@@ -1,4 +1,3 @@
-import { supabase } from "./supabase";
 
 type Bucket =
   | "avatars"
@@ -52,24 +51,17 @@ export async function uploadFile(
     return { error: `File type ${file.type} not allowed.` };
   }
 
-  const ext = file.name.split(".").pop();
-  const path = `${userId}/${crypto.randomUUID()}.${ext}`;
-
-  const { error } = await supabase.storage.from(bucket).upload(path, file, {
-    contentType: file.type,
-    upsert: false,
-  });
-
-  if (error) return { error: error.message };
-
-  const { data } = supabase.storage.from(bucket).getPublicUrl(path);
-  return { url: data.publicUrl };
+  // MOCK UPLOAD: Returning a placeholder since Supabase is removed.
+  // TODO: Integrate Vercel Blob or an alternative storage provider for production.
+  console.log(`Mock upload to ${bucket}: ${file.name}`);
+  const mockUrl = `https://placehold.co/400x400?text=${encodeURIComponent(file.name)}`;
+  
+  return { url: mockUrl };
 }
 
 export async function deleteFile(
   bucket: Bucket,
   url: string
 ): Promise<void> {
-  const path = url.split(`${bucket}/`)[1];
-  if (path) await supabase.storage.from(bucket).remove([path]);
+  console.log(`Mock delete from ${bucket}: ${url}`);
 }
