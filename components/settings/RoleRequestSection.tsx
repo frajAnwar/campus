@@ -51,7 +51,7 @@ export function RoleRequestSection() {
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-2">
             <Label className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Select Requested Role</Label>
-            <Select value={role} onValueChange={setRole}>
+            <Select value={role} onValueChange={(v) => setRole(v as any)}>
               <SelectTrigger className="rounded-xl h-12">
                 <SelectValue placeholder="What is your role?" />
               </SelectTrigger>

@@ -192,7 +192,7 @@ export default async function AssignmentsPage({
             if (submission) {
               if (submission.status === "GRADED") {
                 statusIcon = <CheckCircle2 className="h-4 w-4 text-green-500" />;
-                statusLabel = `Graded: ${submission.grade}/${a.maxPoints}`;
+                statusLabel = `Graded: ${(submission as any).grade}/${a.maxPoints}`;
                 statusColor = "text-green-600";
               } else if (submission.status === "LATE") {
                 statusIcon = <AlertCircle className="h-4 w-4 text-yellow-500" />;

@@ -59,7 +59,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         session.user.universityId = token.universityId as string | null;
         session.user.xp = token.xp as number;
         session.user.rank = token.rank as any;
-        session.user.currentStreak = token.currentStreak as number;
+        (session.user as any).currentStreak = token.currentStreak as number;
 
         // Update streak and activity in background
         if (session.user.id) {

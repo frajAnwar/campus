@@ -20,7 +20,7 @@ import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 
 interface SidebarProps {
-  user: User;
+  user: any;
 }
 
 export function Sidebar({ user }: SidebarProps) {

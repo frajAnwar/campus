@@ -107,7 +107,7 @@ export function SettingsClient({ initialUser }: SettingsClientProps) {
       // Update app settings
       const settingsResult = await updateSettings({
         language,
-        theme,
+        theme: theme as any,
         safeMode,
         profileVisibility: profileVisibility as any,
         allowDMs: allowDMs as any,

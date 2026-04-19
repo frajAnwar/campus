@@ -51,8 +51,8 @@ export default function NotificationsPage() {
     setLoading(true);
     const result = await getNotifications({ limit: 50 });
     if (result.success) {
-      setNotifications(result.data.items);
-      setUnreadCount(result.data.unreadCount);
+      setNotifications((result as any).data.items);
+      setUnreadCount((result as any).data.unreadCount);
     }
     setLoading(false);
   };

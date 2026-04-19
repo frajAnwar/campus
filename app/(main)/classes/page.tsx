@@ -94,7 +94,7 @@ export default async function ClassesPage() {
                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
                       <GraduationCap className="h-4 w-4" />
                       <span className="truncate">
-                        {"educator" in c ? c.educator.name : "You"}
+                        {"educator" in c ? (c as any).educator.name : "You"}
                       </span>
                     </div>
                   </div>

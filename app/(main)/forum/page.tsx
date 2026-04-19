@@ -36,7 +36,7 @@ export default async function ForumPage({ searchParams }: Props) {
     limit: 20,
   });
 
-  const posts = result.success ? result.data.items : [];
+  const posts = result.success ? (result as any).data.items : [];
 
   return (
     <div className="max-w-7xl mx-auto px-4 lg:px-8 py-8 animate-in fade-in duration-500">

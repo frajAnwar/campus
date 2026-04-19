@@ -35,8 +35,8 @@ export function ExplainButton({ assignmentId, compact }: ExplainButtonProps) {
 
     setLoading(false);
 
-    if (result.ok && result.data) {
-      setExplanation(result.data);
+    if ((result as any).success && (result as any).data) {
+      setExplanation((result as any).data);
       setCollapsed(false);
     } else {
       setError((result as any).error ?? "Failed to generate explanation");

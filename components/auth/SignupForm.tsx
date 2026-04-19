@@ -49,7 +49,7 @@ export function SignupForm() {
     const result = await registerUser({ name, username, email, password });
 
     if (!result.success) {
-      setError(result.error);
+      setError((result as any).error ?? "Failed to sign up");
       setLoading(false);
       return;
     }

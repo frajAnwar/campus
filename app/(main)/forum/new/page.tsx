@@ -171,7 +171,7 @@ export default function NewPostPage() {
                 <Label>Visibility</Label>
                 <Select
                   value={visibility}
-                  onValueChange={(v) => setValue("visibility", v as Visibility)}
+                  onValueChange={(v) => setValue("visibility", v as any)}
                 >
                   <SelectTrigger>
                     <SelectValue />

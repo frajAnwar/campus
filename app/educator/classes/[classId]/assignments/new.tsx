@@ -154,7 +154,7 @@ export default function NewAssignmentPage({ params }: { params: Params }) {
 
             <div className="space-y-2">
               <Label htmlFor="submissionType">Submission Type</Label>
-              <Select value={submissionType} onValueChange={setSubmissionType}>
+              <Select value={submissionType} onValueChange={(v) => setSubmissionType(v as any)}>
                 <SelectTrigger>
                   <SelectValue placeholder="Select submission type" />
                 </SelectTrigger>

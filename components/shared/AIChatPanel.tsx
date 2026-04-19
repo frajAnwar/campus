@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Sparkles, X, MessageSquare, BookOpen, Lightbulb, Loader2, Send } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -27,8 +28,8 @@ export function AIChatPanel({ type, targetId, isOpen, onClose }: AIChatPanelProp
       res = await explainAssignment(targetId);
     }
     setLoading(false);
-    if (res.success) {
-      setResult(res.data);
+    if ((res as any).success) {
+      setResult((res as any).data);
     }
   };
 

@@ -29,11 +29,11 @@ export function SubmissionsList({ submissions, assignment }: any) {
     const result = await gradeSubmission(submissionId);
     setGradingId(null);
 
-    if (result.success) {
-      setAiSuggestions(prev => ({ ...prev, [submissionId]: result.data }));
+    if ((result as any).success && (result as any).data) {
+      setAiSuggestions(prev => ({ ...prev, [submissionId]: (result as any).data }));
       toast.success("AI Analysis Complete");
     } else {
-      toast.error(result.error || "AI Grading failed");
+      toast.error((result as any).error || "AI Grading failed");
     }
   };
 

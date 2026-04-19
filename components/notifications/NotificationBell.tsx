@@ -24,7 +24,7 @@ export function NotificationBell({ className }: { className?: string; unreadCoun
   const fetchCount = useCallback(async () => {
     const result = await getNotifications({ limit: 1, unreadOnly: true });
     if (result.success) {
-      setUnreadCount(result.data.unreadCount);
+      setUnreadCount((result as any).data.unreadCount);
     }
   }, []);
 
@@ -42,7 +42,7 @@ export function NotificationBell({ className }: { className?: string; unreadCoun
     if (!open) {
       const result = await getNotifications({ limit: 10 });
       if (result.success) {
-        setNotifications(result.data.items);
+        setNotifications((result as any).data.items);
       }
     }
   };

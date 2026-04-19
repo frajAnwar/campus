@@ -45,7 +45,7 @@ export default async function ProjectsPage({
         : ({ createdAt: "desc" } as const);
 
   const projects = await prisma.project.findMany({
-    where: { ...where, ...techFilter },
+    where: { ...where, ...techFilter } as any,
     include: {
       owner: {
         select: {
@@ -151,7 +151,7 @@ export default async function ProjectsPage({
                     <div className="min-w-0 flex-1">
                       <h3 className="font-medium truncate">{project.title}</h3>
                       <p className="text-xs text-muted-foreground mt-0.5">
-                        by {project.owner.name}
+                        by {(project as any).author?.name || "Student"}
                       </p>
                     </div>
                     <Badge variant="outline" className="text-xs ml-2 shrink-0">
@@ -173,7 +173,7 @@ export default async function ProjectsPage({
                   <div className="flex items-center gap-4 text-xs text-muted-foreground">
                     <span className="flex items-center gap-1">
                       <Star className="h-3.5 w-3.5" />
-                      {project._count.stars}
+                      {(project as any)._count?.stars ?? 0}
                     </span>
                     {project.githubRepo && (
                       <span className="flex items-center gap-1">

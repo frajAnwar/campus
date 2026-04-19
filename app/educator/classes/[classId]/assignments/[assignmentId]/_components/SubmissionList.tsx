@@ -155,8 +155,8 @@ export function SubmissionList({
     setGradingState(submissionId, { aiResult: null });
     try {
       const result = await aiGradeSubmission(submissionId);
-      if (result.success && result.data) {
-        const data = result.data as any;
+      if ((result as any).success && (result as any).data) {
+        const data = (result as any).data;
         setGradingState(submissionId, {
           aiResult: data,
           grade: data.suggested_grade !== undefined ? String(data.suggested_grade) : getGradingState(submissionId).grade,

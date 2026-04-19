@@ -190,7 +190,7 @@ export async function getOrCreateDirectConversation(otherUserId: string) {
         { members: { some: { userId: otherUserId } } },
       ],
     },
-    include: { id: true as any },
+    select: { id: true },
   });
 
   if (existing) {

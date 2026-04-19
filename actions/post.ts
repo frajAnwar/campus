@@ -167,10 +167,10 @@ export async function voteOnPost(postId: string, value: 1 | -1) {
     }
   }
 
-  const total = totalResult._sum.value ?? 0;
+  const total = totalResult?._sum?.value ?? 0;
 
   revalidatePath(`/forum/${postId}`);
-  return { success: true, data: { total: total._sum.value ?? 0 } };
+  return { success: true, data: { total } };
 }
 
 export async function acceptAnswer(commentId: string) {

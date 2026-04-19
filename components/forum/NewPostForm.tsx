@@ -197,7 +197,7 @@ export function NewPostForm({ onSubmit, loading, className }: NewPostFormProps) 
           <div className="space-y-2 rounded-lg border p-3">
             <div className="flex items-center justify-between">
               <Label className="text-xs font-medium">Poll Options</Label>
-              <Button variant="ghost" size="xs" onClick={() => setShowPoll(!showPoll)}>
+              <Button variant="ghost" size="sm" onClick={() => setShowPoll(!showPoll)}>
                 <X className="h-3 w-3" />
               </Button>
             </div>
@@ -217,7 +217,7 @@ export function NewPostForm({ onSubmit, loading, className }: NewPostFormProps) 
               </div>
             ))}
             {pollOptions.length < 6 && (
-              <Button variant="outline" size="xs" onClick={addPollOption} className="gap-1">
+              <Button variant="outline" size="sm" onClick={addPollOption} className="gap-1">
                 <Plus className="h-3 w-3" />
                 Add option
               </Button>
@@ -226,7 +226,7 @@ export function NewPostForm({ onSubmit, loading, className }: NewPostFormProps) 
         )}
 
         {type !== "POLL" && !showPoll && (
-          <Button variant="ghost" size="xs" onClick={() => setShowPoll(true)} className="gap-1">
+          <Button variant="ghost" size="sm" onClick={() => setShowPoll(true)} className="gap-1">
             <Plus className="h-3 w-3" />
             Add poll
           </Button>

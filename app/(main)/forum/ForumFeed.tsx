@@ -101,9 +101,9 @@ export function ForumFeed({
       limit: 20,
     });
     if (result.success) {
-      setPosts(result.data.items);
-      setCursor(result.data.nextCursor);
-      setHasMore(result.data.hasMore);
+      setPosts((result as any).data.items);
+      setCursor((result as any).data.nextCursor);
+      setHasMore((result as any).data.hasMore);
     }
     setLoading(false);
     const params = new URLSearchParams();
@@ -126,9 +126,9 @@ export function ForumFeed({
       limit: 20,
     });
     if (result.success) {
-      setPosts(result.data.items);
-      setCursor(result.data.nextCursor);
-      setHasMore(result.data.hasMore);
+      setPosts((result as any).data.items);
+      setCursor((result as any).data.nextCursor);
+      setHasMore((result as any).data.hasMore);
     }
     setLoading(false);
     updateURL();
@@ -147,9 +147,9 @@ export function ForumFeed({
       limit: 20,
     });
     if (result.success) {
-      setPosts((prev) => [...prev, ...result.data.items]);
-      setCursor(result.data.nextCursor);
-      setHasMore(result.data.hasMore);
+      setPosts((prev) => [...prev, ...(result as any).data.items]);
+      setCursor((result as any).data.nextCursor);
+      setHasMore((result as any).data.hasMore);
     }
     setLoading(false);
   };
