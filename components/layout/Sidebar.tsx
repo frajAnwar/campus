@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { 
@@ -70,8 +71,8 @@ export function Sidebar({ user }: SidebarProps) {
       {/* Logo Section */}
       <div className="flex h-16 items-center px-4 border-b border-border/40">
         <Link href="/dashboard" className="flex items-center gap-3 group">
-          <div className="size-9 rounded-2xl bg-primary flex items-center justify-center text-white text-xl font-black shadow-xl shadow-primary/30 group-hover:scale-105 transition-transform">
-            C
+          <div className="size-9 rounded-2xl bg-white/5 border border-border/40 flex items-center justify-center shadow-xl shadow-primary/10 overflow-hidden group-hover:scale-105 transition-transform">
+            <Image src="/campus-mark-only.png" alt="Campus" width={24} height={24} className="object-contain" />
           </div>
           {!isCollapsed && (
             <span className="font-display font-bold text-xl tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-slate-900 to-slate-500 dark:from-white dark:to-slate-400">

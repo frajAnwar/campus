@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { Menu, LayoutDashboard, MessageSquare, BookOpen, User, Sparkles, Plus } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
@@ -49,8 +50,8 @@ export function MobileNav({ user }: MobileNavProps) {
             <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
             <div className="flex h-16 items-center px-6 border-b border-border/50">
               <Link href="/dashboard" className="flex items-center gap-2 font-display font-bold text-xl tracking-tight" onClick={() => setOpen(false)}>
-                <div className="size-8 rounded-lg bg-primary flex items-center justify-center text-white text-lg shadow-lg shadow-primary/20">
-                  C
+                <div className="size-8 rounded-lg bg-white/5 border border-border/40 flex items-center justify-center shadow-lg shadow-primary/10 overflow-hidden">
+                  <Image src="/campus-mark-only.png" alt="Campus" width={24} height={24} className="object-contain" />
                 </div>
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70">
                   Campus

@@ -1,5 +1,5 @@
 import { LoginForm } from "@/components/auth/LoginForm";
-import Link from "next/link";
+import Link from "next/link";import Image from "next/image";
 
 export default function LoginPage() {
   return (
@@ -12,8 +12,8 @@ export default function LoginPage() {
 
       <div className="relative z-10 w-full max-w-md flex flex-col gap-8 items-center">
         <Link href="/" className="flex items-center gap-2 group">
-          <div className="size-10 rounded-xl bg-primary flex items-center justify-center text-white text-xl font-bold shadow-xl shadow-primary/20 group-hover:scale-110 transition-transform duration-300">
-            C
+          <div className="size-10 rounded-xl bg-white/5 border border-border/40 flex items-center justify-center shadow-xl shadow-primary/20 overflow-hidden group-hover:scale-110 transition-transform duration-300">
+            <Image src="/campus-mark-only.png" alt="Campus Logo" width={32} height={32} className="object-contain" />
           </div>
           <span className="text-2xl font-display font-bold tracking-tight">Campus</span>
         </Link>

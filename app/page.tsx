@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const features = [
   {
@@ -151,8 +152,8 @@ export default function LandingPage() {
             transition={{ duration: 0.5 }}
             className="flex items-center gap-3"
           >
-            <div className="size-10 rounded-xl bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center text-white text-xl font-bold shadow-xl shadow-blue-500/20">
-              C
+            <div className="size-10 rounded-xl bg-white/5 flex items-center justify-center shadow-xl shadow-blue-500/10 overflow-hidden border border-white/10">
+              <Image src="/campus-mark-only.png" alt="Campus Logo" width={32} height={32} className="object-contain" />
             </div>
             <span className="text-2xl font-display font-bold tracking-tight">Campus</span>
           </motion.div>
@@ -464,8 +465,8 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto px-6 py-12">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-3">
-              <div className="size-8 rounded-lg bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center text-white text-sm font-bold">
-                C
+              <div className="size-8 rounded-lg bg-white/5 flex items-center justify-center border border-white/10 overflow-hidden">
+                <Image src="/campus-mark-only.png" alt="Campus Logo" width={24} height={24} className="object-contain" />
               </div>
               <span className="text-sm font-display font-bold text-white/60">Campus Platform</span>
             </div>
