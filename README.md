@@ -1,36 +1,125 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎓 Campus
 
-## Getting Started
+Campus is a unified student community platform that replaces the fragmented chaos of academic digital life. Instead of bouncing between WhatsApp for class groups, Google Classroom for assignments, GitHub for projects, LinkedIn for portfolios, Discord for community, and Google Forms for event registration — Campus integrates all of these into **one coherent, beautiful, and deeply integrated experience.**
 
-First, run the development server:
+The core idea is simple: **a student's entire academic identity lives in one place.** Classes, projects, forum contributions, club memberships, achievements, and portfolios are all connected and communicate with each other seamlessly.
 
+---
+
+## 🚀 Features
+
+### 👥 Role-Based Architecture
+Campus provides tailored experiences depending on user roles:
+- **Students**: Access to classes, gamified progress, forums, projects, and clubs.
+- **Educators**: Dedicated portals to create courses, manage students, grade submissions, and view class analytics.
+- **Administrators**: Hardcore dashboards to monitor platform health, approve club/role requests, and moderate content.
+
+### 🎮 Gamification Engine
+Incentivize deep academic engagement:
+- **XP & Levels**: Earn XP for attending classes, submitting assignments early, answering forum questions, and contributing to projects.
+- **Ranks**: Progress through ranks (Novice, Scholar, Elite, Legend, etc.) with progressive unlocking of privileges.
+- **Streaks**: Maintain study streaks with the built-in Pomodoro Study Timer.
+- **Badges**: Unlock visual achievements for milestones like "First Pull Request" or "Top Answerer."
+
+### 📚 Virtual Classrooms
+- **Course Management**: Educators can create rich course pages, upload resources, and manage student enrollment.
+- **Assignments**: Built-in assignment submissions, grading pipelines, and deadline tracking.
+- **Live Class Chat**: Dedicated real-time discussion channels for every class.
+
+### 💬 Integrated Academic Forum
+- **AI Summaries**: Long discussion threads are automatically summarized by AI so students can catch up quickly.
+- **Upvoting & Reputation**: StackOverflow-style upvoting for answers, rewarding helpful students with reputation points.
+- **Smart Tags**: Auto-categorization of questions by course, technology, or topic.
+
+### 🛠 Project Portfolios
+- **Showcase**: Students can upload their projects, link GitHub repositories, and add tech-stack tags.
+- **Peer Reviews**: Integrated code and project review system where students can critique each other's work for extra XP.
+- **Discoverability**: Trending algorithm highlights top projects across the university ecosystem.
+
+### 🏛 Club & Event Management
+- **Official Clubs**: Students can request to create or join official university clubs.
+- **Event Registrations**: Built-in RSVP system for club events, workshops, and hackathons.
+- **Dedicated Hubs**: Each club gets a private feed, resource area, and member directory.
+
+---
+
+## 💻 Tech Stack
+
+Campus is built with modern, cutting-edge web technologies:
+
+- **Framework**: [Next.js 16 (App Router)](https://nextjs.org/)
+- **Database**: [Neon PostgreSQL](https://neon.tech/) (Serverless Postgres)
+- **ORM**: [Prisma](https://www.prisma.io/)
+- **Authentication**: [NextAuth.js (v5)](https://authjs.dev/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **UI Components**: [shadcn/ui](https://ui.shadcn.com/)
+- **Deployment**: [Vercel](https://vercel.com/)
+
+---
+
+## 🛠 Local Setup & Development
+
+### 1. Clone the repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/frajAnwar/campus.git
+cd campus
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install dependencies
+```bash
+npm install
+# or yarn install / pnpm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Environment Variables
+Create a `.env` file in the root directory and add the following variables:
+```env
+# Database
+DATABASE_URL="postgresql://username:password@your-neon-host/dbname?sslmode=require"
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# NextAuth
+AUTH_SECRET="your-super-secret-auth-key-generate-with-openssl"
+NEXTAUTH_URL="http://localhost:3000"
 
-## Learn More
+# (Optional) Third-Party Integrations
+RESEND_API_KEY="your-resend-key"
+GITHUB_ID="your-github-oauth-id"
+GITHUB_SECRET="your-github-oauth-secret"
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 4. Database Setup
+Push the schema to your Neon PostgreSQL database and seed the demo accounts:
+```bash
+npx prisma db push
+npx prisma db seed
+```
+*Note: The seed script will generate default Admin, Educator, and Student accounts.*
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 5. Run the Development Server
+```bash
+npm run dev
+```
+Navigate to `http://localhost:3000` to see the application running.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🔑 Demo Accounts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+If you have seeded the database, you can log in immediately with the following demo credentials (all passwords are `password123`):
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Role | Email |
+| :--- | :--- |
+| **Admin** | `admin@campus.com` |
+| **Educator** | `prof.smith@campus.com` |
+| **Student** | `john.doe@campus.com` |
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! If you'd like to improve the platform, please fork the repository and create a pull request. Make sure your code adheres to the existing styling and ESLint rules.
+
+---
+
+**Campus — Your Academic Life, Unified.**
